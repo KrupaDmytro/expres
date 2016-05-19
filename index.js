@@ -41,25 +41,6 @@
     }
 	
     var myitems = [];
- 
-	function calculatePrice()
-	{
-		 var price = 0;
-		 var atLeastOneIsSelected = false;
-		 for(var i in myitems)
-		 {
-			 var checkid = "itemcheck_"+i;
-			 if ($(checkid).checked) { price += myitems[i].price; atLeastOneIsSelected = true; }
-		 }
-		 return [price, atLeastOneIsSelected];
-	}
- 
-    function selectionChangeF()
-    {
-		var price = calculatePrice();// [price, is_selected]
-		$("totalprice").innerHTML = "Сума замовлення: " + price[0].toFixed(2) + " грн.";
-		$("buybutton").disabled = !price[1];
-    }
 	
 	$("buybutton").onclick = function()
 	{
