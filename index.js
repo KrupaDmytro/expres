@@ -201,29 +201,32 @@
         var itemcontainer = $("itemcontainer");
         itemcontainer.innerHTML = '<hr>';
 
-        for(var i in myitems)
-        {
-            var item = myitems[i];
-            item.price = Number.parseFloat(item.price); // make sure it is a number
 
-            var nameid = "itemname_"+i;
-            var textid = "itemtext_"+i;
-            var checkid = "itemcheck_"+i;
+    for(var i in myitems)
+    {
+        var item = myitems[i];
 
-            itemcontainer.innerHTML +=	'<div class="w3-row"><div class="w3-col s4 m2">' +
-                                        '<img src="' + item.icon + '" style="width:100%"></img></div>' +
-                                        '<div class="w3-col s8 m7 w3-container"><h3 id="'+nameid+'"></h3>' +
-                                        '<p id="'+textid+'"></p></div><div class="w3-col s12 m3 w3-container">' +
-                                        '<h3><input id="' + checkid + '" type="checkbox"></input>&nbsp;'+item.price+' грн.</h3></div></div><hr>';
+        if(item.href == "#") {
+            itemcontainer.innerHTML += '<div class="w3-col">' +
+                '<h2>' +
+                item.name;
 
-            $(nameid).appendChild(document.createTextNode(item.name));
-            $(textid).appendChild(document.createTextNode(item.desc));
-		}
-		
-		for(var i in myitems)
-		{
-			$("itemcheck_"+i).onchange = selectionChangeF;
-		}
+            +'</h2>';
+            if (item.foto == 1) itemcontainer.innerHTML += '<div class="w3-round-jumbo w3-tag w3-red" h2>ФОТО</div></h2>';
+            itemcontainer.innerHTML += '<br>' + item.desc + '<hr>' +
+                '</div>';
+        }
+        else {
+            itemcontainer.innerHTML += '<div class="w3-col">' +
+                '<h2><a href="' + item.href + '">' +
+                item.name;
+
+            +'</h2></a>';
+            if (item.foto == 1) itemcontainer.innerHTML += '<div class="w3-round-jumbo w3-tag w3-red" h2>ФОТО</div></h2>';
+            itemcontainer.innerHTML += '<br>' + item.desc + '<hr>' +
+                '</div>';
+        }
+    }
         selectionChangeF();
 	}
 	
