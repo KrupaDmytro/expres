@@ -43,15 +43,41 @@
 	<meta charset="UTF-8"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="lib/w3.css"></link>
-	<link rel="stylesheet" href="lib/w3-theme-blue.css"></link>
+	<link rel="stylesheet" href="lib/w3-theme-yellow.css"></link>
 	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+	<style>
+    a {
+        text-decoration: none;
+    }
+	</style>
+	
     <body>
-        <header class="w3-container w3-card-4 w3-theme">
-		    <title>Символіка</title>
-			<h1>Магазин військової атрибутики - Символіка</h1>
-        </header>
+		<header class="w3-container w3-deep-orange">
+		    <div class="w3-row">
+				<!-- Page content -->
+				<div class="w3-opennav w3-col l1 m1" onclick="w3_open()">
+					<h2>☰</h2>
+				</div>
+
+				<div class="w3-container w3-col w3-center l6 m6">
+				<h1>Світові новини</h1>
+				</div>
+			</div>
+		</header>
 			
+		<nav class="w3-sidenav w3-white w3-animate-left" style="display:none;z-index:4">
+			<a href="index.html">Головна</a>
+			<a href="#">Стрічка</a>
+			<a href="#">Отсанній випус</a>
+			<a href="#">Львівські новини</a>
+			<a href="#">Оголошення</a>
+			<a href="about.html">Про нас</a>
+		</nav>
+		
+				<!-- Overlay -->
+		<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
+		
 			<div class="w3-light-aqua w3-container w3-padding-32 w3-center">
 			<h2 class="w3-jumbo">Завантаження файлу</h2>
 			</div>
@@ -81,7 +107,36 @@
         </div>
 
 		<footer class="w3-container w3-center w3-theme w3-bottom">
-		<h5>© 2016 | Крупа Дмитро</h5>
+		<h5>© 2016 | Ільчишин Ірина</h5>
 		</footer>
     </body>
+<script>
+    function w3_open() {
+        document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+        document.getElementsByClassName("w3-overlay")[0].style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+        document.getElementsByClassName("w3-overlay")[0].style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+    }
+</script>
 </html>
