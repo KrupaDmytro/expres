@@ -80,18 +80,11 @@
 		
 			<div class="w3-light-aqua w3-container w3-padding-32 w3-center">
 			<h2 class="w3-jumbo">Завантаження файлу</h2>
-			</div>
-
-		<ul class="w3-navbar w3-large w3-center w3-theme">
-			<li><a href="index.html">Головна</a></li>
-			<li><a href="store.html">Доставка і оплата</a></li>
-			<li><a href="about.html">Про</a></li>
-		</ul>
-			
+			</div>	
 
         <div class="w3-card-4 w3-margin">
 
-            <div class="w3-container w3-indigo">
+            <div class="w3-container w3-red">
 				<center><h2>Форма для завантаження</h2></center>
             </div>
 
